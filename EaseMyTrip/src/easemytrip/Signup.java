@@ -28,7 +28,7 @@ public class Signup extends JFrame implements ActionListener{
     }
 
     public Signup() {
-        setBounds(600, 250, 700, 606);
+        setBounds(600, 150, 700, 606);
 	contentPane = new JPanel();
 	contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	setContentPane(contentPane);
@@ -116,6 +116,7 @@ public class Signup extends JFrame implements ActionListener{
 	
 	textField_4 = new JTextField();
 	textField_4.setColumns(10);
+	textField_4.setUI(new JTextFieldHintUI("dd-mm-yyyy", Color.gray));
 	textField_4.setBounds(265, 274, 148, 20);
 	contentPane.add(textField_4);
 	
@@ -172,6 +173,8 @@ public class Signup extends JFrame implements ActionListener{
 		int i = st.executeUpdate();
 		if (i > 0){
                     JOptionPane.showMessageDialog(null, "Account Created Successfully ");
+                    setVisible(false);
+                    new Loading(textField.getText()).setVisible(true);
                 }
 
                 textField.setText("");
