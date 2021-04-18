@@ -30,24 +30,14 @@ public class ForgotPassword extends JFrame implements ActionListener{
 	l1.setBounds(109, 83, 87, 29);
 	contentPane.add(l1);
 
-	JLabel l2 = new JLabel("Name");
-	l2.setFont(new Font("Tahoma", Font.BOLD, 13));
-	l2.setBounds(109, 122, 75, 21);
-	contentPane.add(l2);
-
-	JLabel l3 = new JLabel("Your Security Question");
-	l3.setFont(new Font("Tahoma", Font.BOLD, 13));
-	l3.setBounds(109, 154, 156, 27);
-	contentPane.add(l3);
-
-	JLabel l4 = new JLabel("Answer");
+	JLabel l4 = new JLabel("Email");
 	l4.setFont(new Font("Tahoma", Font.BOLD, 13));
-	l4.setBounds(109, 192, 104, 21);
+	l4.setBounds(109, 132, 104, 21);
 	contentPane.add(l4);
 
 	JLabel l5 = new JLabel("Password");
 	l5.setFont(new Font("Tahoma", Font.BOLD, 13));
-	l5.setBounds(109, 224, 104, 21);
+	l5.setBounds(109, 184, 104, 21);
 	contentPane.add(l5);
 
 	t1 = new JTextField();
@@ -57,27 +47,12 @@ public class ForgotPassword extends JFrame implements ActionListener{
 	contentPane.add(t1);
 	t1.setColumns(10);
 
-	t2 = new JTextField();
-	t2.setEditable(false);
-	t2.setFont(new Font("Tahoma", Font.BOLD, 13));
-	t2.setForeground(new Color(165, 42, 42));
-	t2.setColumns(10);
-	t2.setBounds(277, 123, 139, 20);
-	contentPane.add(t2);
-
-	t3 = new JTextField();
-	t3.setEditable(false);
-	t3.setFont(new Font("Tahoma", Font.BOLD, 12));
-	t3.setForeground(new Color(72, 61, 139));
-	t3.setColumns(10);
-	t3.setBounds(277, 161, 221, 20);
-	contentPane.add(t3);
-
+	
 	t4 = new JTextField();
 	t4.setFont(new Font("Tahoma", Font.BOLD, 13));
 	t4.setForeground(new Color(205, 92, 92));
 	t4.setColumns(10);
-	t4.setBounds(277, 193, 139, 20);
+	t4.setBounds(277, 132, 139, 20);
 	contentPane.add(t4);
 
 	t5 = new JTextField();
@@ -85,7 +60,7 @@ public class ForgotPassword extends JFrame implements ActionListener{
 	t5.setFont(new Font("Tahoma", Font.BOLD, 13));
 	t5.setForeground(new Color(50, 205, 50));
 	t5.setColumns(10);
-	t5.setBounds(277, 225, 139, 20);
+	t5.setBounds(277, 184, 139, 20);
 	contentPane.add(t5);
         
         ImageIcon c1 = new ImageIcon(ClassLoader.getSystemResource("easemytrip/icons/login.png"));
@@ -96,18 +71,12 @@ public class ForgotPassword extends JFrame implements ActionListener{
         l6.setBounds(560, 70, 200, 200);
         add(l6);
 
-	b1 = new JButton("Search");
-	b1.addActionListener(this);
-	b1.setFont(new Font("Tahoma", Font.BOLD, 12));
-	b1.setBounds(428, 83, 80, 29);
-	b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.WHITE);
-        contentPane.add(b1);
+	
 
 	b2 = new JButton("Retrieve");
 	b2.addActionListener(this);
 	b2.setFont(new Font("Tahoma", Font.BOLD, 12));
-	b2.setBounds(426, 188, 85, 29);
+	b2.setBounds(333, 270, 105, 32);
 	b2.setBackground(Color.BLACK);
         b2.setForeground(Color.WHITE);
 	contentPane.add(b2);
@@ -115,7 +84,7 @@ public class ForgotPassword extends JFrame implements ActionListener{
 	b3 = new JButton("Back");
 	b3.addActionListener(this);
 	b3.setFont(new Font("Tahoma", Font.BOLD, 13));
-	b3.setBounds(233, 270, 101, 29);
+	b3.setBounds(133, 270, 105, 29);
         b3.setBackground(Color.BLACK);
         b3.setForeground(Color.WHITE);
 	contentPane.add(b3);
@@ -129,25 +98,16 @@ public class ForgotPassword extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae){
         try{
             Conn con = new Conn();
-            if(ae.getSource() == b1){
-                String sql = "select * from customer where username=?";
-		PreparedStatement st = con.c.prepareStatement(sql);
+           
 
-		st.setString(1, t1.getText());
-		ResultSet rs = st.executeQuery();
-
-		while (rs.next()) {
-                    t2.setText(rs.getString("name"));
-                    t3.setText(rs.getString("security"));
-		}
-
-            }
+		
             if(ae.getSource() == b2){
-                String sql = "select * from customer where answer=?";
-		PreparedStatement st = con.c.prepareStatement(sql);
+            	  String sql = "select * from customer where username=? and email=?";
+          		PreparedStatement st = con.c.prepareStatement(sql);
 
-		st.setString(1, t4.getText());
-		ResultSet rs = st.executeQuery();
+          		st.setString(1, t1.getText().toUpperCase());
+          		st.setString(2, t4.getText());
+          		ResultSet rs = st.executeQuery();
 
 		while (rs.next()) {
                     	t5.setText(rs.getString("password"));
@@ -158,7 +118,8 @@ public class ForgotPassword extends JFrame implements ActionListener{
                 this.setVisible(false);
 		new Login().setVisible(true);
 			
-            }
+            }JOptionPane.showMessageDialog(null, "Enter Valid Credentials");
+            setVisible(false);
         }catch(Exception e){
             
         }
