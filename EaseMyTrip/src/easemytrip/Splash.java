@@ -10,11 +10,11 @@ public class Splash {
         f1.setVisible(true);
         int i;
         int x=1;
-        for(i=2; i<=600; i+=8, x+=6){
+        for(i=2; i<=600; i+=15, x+=8){
             f1.setLocation(900 - ((i+x)/2), 500 - (i/2));
             f1.setSize(i+x,i);
             try{
-                Thread.sleep(3);
+                Thread.sleep(20);
             }catch(Exception e){}
         }
         
@@ -25,7 +25,7 @@ class SplashFrame extends JFrame implements Runnable{
     SplashFrame(){
         setLayout(new FlowLayout());
         ImageIcon c1 = new ImageIcon(ClassLoader.getSystemResource("easemytrip/icons/splashimg.jpg"));
-        Image i1 = c1.getImage().getScaledInstance(1030, 750,Image.SCALE_DEFAULT);
+        Image i1 = c1.getImage().getScaledInstance(940, 475,Image.SCALE_DEFAULT);
         ImageIcon i2 = new ImageIcon(i1);
         
         JLabel l1 = new JLabel(i2);
@@ -36,7 +36,7 @@ class SplashFrame extends JFrame implements Runnable{
     }
     public void run(){
         try{
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             this.setVisible(false);
             
             Login l = new Login();
