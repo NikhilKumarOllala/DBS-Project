@@ -17,6 +17,7 @@ public class Home extends JFrame{
         setForeground(Color.CYAN);
         setLayout(null); 
 	  
+        
       
         
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("easemytrip/icons/Hotel.jpg"));
@@ -66,40 +67,20 @@ public class Home extends JFrame{
         JMenuItem mi6 = new JMenuItem("CHECK PACKAGE");
 	m2.add(mi6);
         
-        JMenuItem mi7 = new JMenuItem("BOOK PACKAGE");
-	m2.add(mi7);
-        
-        JMenuItem mi5 = new JMenuItem("VIEW PACKAGE");
-	m2.add(mi5);
-        
         
         mi6.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 try{
-                   // new CheckPackage().setVisible(true);
+                   new CheckPackage().setVisible(true);
                 }catch(Exception e ){}
             }
 	});
         
 
-        mi7.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-                try{
-                   // new BookPackage(username).setVisible(true);
-                }catch(Exception e ){}
-            }
-	});
+  
         
 
-	mi5.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-                try{
-                   // new ViewPackage(username).setVisible(true);
-                }catch(Exception e ){}
-                
-            }
-	});
-        
+
         
         JMenu m3 = new JMenu("HOTELS");
         m3.setForeground(Color.BLUE);
