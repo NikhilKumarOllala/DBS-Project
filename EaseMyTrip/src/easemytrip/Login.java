@@ -81,11 +81,7 @@ public class Login extends JFrame implements ActionListener{
 	b3.setBounds(199, 231, 179, 25);
 	panel.add(b3);
 
-	JLabel l5 = new JLabel("Trouble in Login?");
-	l5.setFont(new Font("Tahoma", Font.PLAIN, 15));
-	l5.setForeground(new Color(255, 0, 0));
-	l5.setBounds(70, 235, 110, 20);
-	panel.add(l5);
+	
 
         JPanel panel2 = new JPanel();
         panel2.setBackground(new Color(255, 255, 204));
@@ -109,7 +105,7 @@ public class Login extends JFrame implements ActionListener{
                         this.setVisible(false);
                        new Loading(textField.getText()).setVisible(true);
                     } else
-			JOptionPane.showMessageDialog(null, "Invalid Login or Password!");
+			JOptionPane.showMessageDialog(null, "Invalid Username or Password!");
                        
 		} catch (Exception e2) {
                     e2.printStackTrace();
