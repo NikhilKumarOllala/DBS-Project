@@ -12,7 +12,6 @@ ER-Diagram
 
 <br/>
 DataBase Schema
-![image](https://user-images.githubusercontent.com/62793066/115201645-30328580-a113-11eb-8249-508fe9c8e3f5.png)
-
+![image](https://dbdiagram.io/d/607d428ab29a09603d110fec)
 
 
