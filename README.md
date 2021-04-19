@@ -12,6 +12,6 @@ ER-Diagram
 
 <br/>
 DataBase Schema
-![image](https://dbdiagram.io/d/607d428ab29a09603d110fec)
+![image](https://dbdiagram.io/d/607d428ab29a09603d110fec.png)
 
 
