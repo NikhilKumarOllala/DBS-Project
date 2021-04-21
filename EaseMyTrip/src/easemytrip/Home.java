@@ -29,16 +29,15 @@ public class Home extends JFrame{
         
         JLabel l1 = new JLabel("Ease My Trip");
 	l1.setForeground(Color.WHITE);
-        l1.setFont(new Font("Tahoma", Font.CENTER_BASELINE, 35));
-	l1.setBounds(100, 60, 1000, 100);
+        l1.setFont(new Font("robonto", Font.BOLD, 45));
+	l1.setBounds(40, 30, 1000, 100);
 	NewLabel.add(l1);
 		
 		
         JMenuBar menuBar = new JMenuBar();
 	setJMenuBar(menuBar);
 		
-        JMenu m1 = new JMenu("Profile");
-        m1.setForeground(Color.BLUE);
+        JMenu m1 = new JMenu("PROFILE");
 	menuBar.add(m1);
 		
  
@@ -61,7 +60,6 @@ public class Home extends JFrame{
         
 		
 	JMenu m2 = new JMenu("PACKAGES");
-        m2.setForeground(Color.BLUE);
 	menuBar.add(m2);
         
         JMenuItem mi6 = new JMenuItem("CHECK PACKAGE");
@@ -83,8 +81,7 @@ public class Home extends JFrame{
 
         
         JMenu m3 = new JMenu("HOTELS");
-        m3.setForeground(Color.BLUE);
-	menuBar.add(m3);
+     	menuBar.add(m3);
         
         JMenuItem mi8 = new JMenuItem("BOOK HOTELS");
 	m3.add(mi8);
@@ -119,22 +116,9 @@ public class Home extends JFrame{
             }
 	});
         
-        JMenu m4 = new JMenu("DESTINATION");
-        m4.setForeground(Color.BLUE);
-	menuBar.add(m4);
-        
-        JMenuItem mi11 = new JMenuItem("DESTINATION");
-	m4.add(mi11);
-        
-        mi11.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-               // new Destination().setVisible(true);
-            }
-	});
-        
+      
         
         JMenu m5 = new JMenu("PAYMENT");
-        m5.setForeground(Color.BLUE);
 	menuBar.add(m5);
         
         JMenuItem mi12 = new JMenuItem("PAY USING PAYTM");
@@ -142,12 +126,11 @@ public class Home extends JFrame{
         
         mi12.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                //new Payment().setVisible(true);
+                new Payment().setVisible(true);
             }
 	});
         
         JMenu m6 = new JMenu("UTILITY");
-        m6.setForeground(Color.BLUE);
 	menuBar.add(m6);
         
         JMenuItem mi13 = new JMenuItem("NOTEPAD");
@@ -173,19 +156,7 @@ public class Home extends JFrame{
             }
 	});
         
-        JMenu m7 = new JMenu("ABOUT");
-        m7.setForeground(Color.BLUE);
-	menuBar.add(m7);
-        
-        JMenuItem mi15 = new JMenuItem("ABOUT");
-	m7.add(mi15);
-        
-        mi15.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-               // new About().setVisible(true);
-            }
-	});
-        
+  
         
         
         setExtendedState(JFrame.MAXIMIZED_BOTH); 
