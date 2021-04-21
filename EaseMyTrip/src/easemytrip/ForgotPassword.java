@@ -108,20 +108,24 @@ public class ForgotPassword extends JFrame implements ActionListener{
           		st.setString(1, t1.getText().toUpperCase());
           		st.setString(2, t4.getText());
           		ResultSet rs = st.executeQuery();
-
-		while (rs.next()) {
-                    	t5.setText(rs.getString("password"));
-		}
+                   if(!rs.next())
+                	   JOptionPane.showMessageDialog(null, "Enter Valid Credentials");
+                   else
+                	   t5.setText(rs.getString("password"));
+		
 
             }
             if(ae.getSource() == b3){
                 this.setVisible(false);
 		new Login().setVisible(true);
 			
-            }JOptionPane.showMessageDialog(null, "Enter Valid Credentials");
-            setVisible(false);
+            }
+           
+        	  
+           
+           
         }catch(Exception e){
-            
+        	
         }
     }
 
