@@ -41,8 +41,8 @@ public class UpdateCustomer extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
                 
-                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("easemytrip/icons/update.png"));
-                Image i3 = i1.getImage().getScaledInstance(200, 400,Image.SCALE_DEFAULT);
+                ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("easemytrip/icons/man.png"));
+                Image i3 = i1.getImage().getScaledInstance(200, 200,Image.SCALE_DEFAULT);
                 ImageIcon i2 = new ImageIcon(i3);
                 JLabel l1 = new JLabel(i2);
                 l1.setBounds(500,40,200,400);
@@ -56,11 +56,14 @@ public class UpdateCustomer extends JFrame {
                 JLabel l3 = new JLabel("Customer id :");
 		l3.setBounds(35, 70, 200, 14);
 		contentPane.add(l3);
-                
-                t1 = new JTextField();
-		t1.setBounds(271, 70, 150, 20);
-		contentPane.add(t1);
-		t1.setColumns(10);
+		
+		JLabel t1 = new JLabel("");
+		 t1.setBounds(271, 70, 150, 20);
+		 contentPane.add(t1);
+		 
+		
+		
+		
                 
                 JLabel lblId = new JLabel("username :");
 		lblId.setBounds(35, 110, 200, 14);
@@ -72,13 +75,13 @@ public class UpdateCustomer extends JFrame {
 		t2.setColumns(10);
                 
                 JLabel l2 = new JLabel("Email :");
-		l2.setBounds(35, 150, 200, 14);
+		l2.setBounds(35, 150, 250, 14);
 		contentPane.add(l2);
                 
-                t3 = new JTextField();
-		t3.setBounds(271, 150, 150, 20);
-		contentPane.add(t3);
-		t3.setColumns(10);
+		 JLabel t3 = new JLabel("");
+		 t3.setBounds(271, 150, 150, 20);
+			contentPane.add(t3);
+			
 		
 		JLabel lblName_1 = new JLabel("Phone :");
 		lblName_1.setBounds(35, 190, 200, 14);
@@ -102,20 +105,21 @@ public class UpdateCustomer extends JFrame {
 		JLabel lblCountry = new JLabel("Date of Birth :");
 		lblCountry.setBounds(35, 270, 200, 14);
 		contentPane.add(lblCountry);
-                
-                t6 = new JTextField();
+             
+		JLabel t6 = new JLabel("");
 		t6.setBounds(271, 270, 150, 20);
 		contentPane.add(t6);
-		t6.setColumns(10);
+               
 		
 		JLabel lblReserveRoomNumber = new JLabel("Gender:");
 		lblReserveRoomNumber.setBounds(35, 310, 200, 14);
 		contentPane.add(lblReserveRoomNumber);
                 
-                t7 = new JTextField();
+		JLabel t7 = new JLabel("");
 		t7.setBounds(271, 310, 150, 20);
 		contentPane.add(t7);
-		t7.setColumns(10);
+		
+              
            	
 		JLabel lblCheckInStatus = new JLabel("City :");
 		lblCheckInStatus.setBounds(35, 350, 200, 14);
@@ -173,6 +177,7 @@ public class UpdateCustomer extends JFrame {
                                 setVisible(false);
 	    		}catch(SQLException e1){
 	    			System.out.println(e1.getMessage());
+	    			JOptionPane.showMessageDialog(null, "Username unavailable!");
 	    		}
 		    		catch(NumberFormatException s){
 		    			JOptionPane.showMessageDialog(null, "Please enter a valid Number");
